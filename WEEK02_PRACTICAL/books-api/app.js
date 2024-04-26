@@ -18,7 +18,7 @@ app.get('/books', (req, res) => {
     const newBook = req.body; // Get the new book data from the request body
     newBook.id = books.length + 1; // Assign a unique ID
     books.push(newBook); // Add the new book to the array
-    res.status(201).json(newBook); // Send created book with status code 201
+    res.status(201).json(newBook); // Send createdd book with status code 201.
    });
    app.get('/books/:id', (req, res) => {
     const bookId = parseInt(req.params.id); // Get book ID from URL parameter
