@@ -89,6 +89,20 @@ class Book {
 
     return result.rowsAffected > 0; // Indicate success based on affected rows
   }
+w
+  static async getBookCount() {
+    const connection = await sql.connect(dbConfig);
+  
+    const sqlQuery = `SELECT COUNT(*) AS count FROM Books;` // Get the count of books
+  
+    const request = connection.request();
+    const result = await request.query(sqlQuery);
+  
+    connection.close();
+  
+    return result.recordset[0].count; // Return the count of books
+  }
 }
+
 
 module.exports = Book;

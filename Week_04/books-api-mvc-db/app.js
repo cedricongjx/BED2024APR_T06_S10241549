@@ -15,6 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Routes for GET requests (replace with appropriate routes for update and delete later)
 app.get("/books", booksController.getAllBooks);
 app.get("/books/:id", booksController.getBookById);
+app.get("/book-count", booksController.getBookCount); 
 app.post("/books", validateBook, booksController.createBook); // POST for creating books (can handle JSON data)
 app.put("/books/:id", booksController.updateBook); // PUT for updating books
 app.delete("/books/:id", booksController.deleteBook); // DELETE for deleting books
